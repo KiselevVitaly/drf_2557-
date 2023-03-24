@@ -27,3 +27,8 @@ serializer = AuthorSerializer(data=data)
 print(serializer.is_valid()) # True
 print(serializer.validated_data) # OrderedDict([('name', 'Грин'), ('birthday_year', 1880)])
 print(type(serializer.validated_data)) # <class 'collections.OrderedDict'>
+
+class ArticleSerializer(ModelSerializer):
+    class Meta:
+        model = Article
+        fields = '__all__'
